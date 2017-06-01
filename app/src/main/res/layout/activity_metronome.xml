@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.schoe.myapplication.Metronome"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="8dp">
+
+
+    <ImageView
+        android:id="@+id/palka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bitsToggleButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:rotation="-15"
+        app:srcCompat="@drawable/metronomepalka"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="124dp" />
+
+        <EditText
+            android:id="@+id/bitsText"
+            android:layout_width="133dp"
+            android:layout_height="38dp"
+            android:layout_alignEnd="@+id/palka"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/palka"
+            android:layout_marginTop="100dp"
+            android:ems="10"
+            android:hint="@string/bits_minute"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+    <ToggleButton
+        android:id="@+id/bitsToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bitsToggleText"
+        tools:layout_editor_absoluteY="64dp"
+        tools:layout_editor_absoluteX="227dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_alignBaseline="@+id/bitsText"
+        android:layout_alignBottom="@+id/bitsText"
+        android:layout_toRightOf="@+id/bitsText"
+        android:layout_toEndOf="@+id/bitsText" />
+
+    <ImageView
+        android:id="@+id/podstawka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/palka"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/podstawka" />
+
+</RelativeLayout>

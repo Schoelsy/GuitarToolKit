@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.schoe.myapplication.ChordsTranspositions">
+
+    <EditText
+        android:id="@+id/chodsEditTextID"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:hint="Original Chords"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <EditText
+        android:id="@+id/transpositionNumber"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/chodsEditTextID"
+        android:layout_alignStart="@+id/chodsEditTextID"
+        android:layout_below="@+id/chodsEditTextID"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/newChordsView"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/chodsEditTextID"
+        android:layout_alignRight="@+id/chodsEditTextID"
+        android:layout_alignTop="@+id/arrowUp"
+        android:textColor="@android:color/black"
+        android:textSize="35sp" />
+
+    <ImageButton
+        android:id="@+id/helpButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/helpbutton2"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/arrowDown"
+        android:layout_alignStart="@+id/arrowDown"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp" />
+
+    <ImageButton
+        android:id="@+id/arrowUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arrowup"
+        android:layout_below="@+id/chodsEditTextID"
+        android:layout_toRightOf="@+id/transpositionNumber"
+        android:layout_toEndOf="@+id/transpositionNumber"
+        android:layout_marginTop="17dp" />
+
+    <ImageButton
+        android:id="@+id/arrowDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/arrowdown"
+        android:layout_below="@+id/arrowUp"
+        android:layout_toRightOf="@+id/transpositionNumber"
+        android:layout_toEndOf="@+id/transpositionNumber" />
+
+</RelativeLayout>
