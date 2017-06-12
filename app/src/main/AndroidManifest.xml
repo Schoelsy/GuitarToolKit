@@ -3,6 +3,7 @@
     package="com.example.schoe.myapplication">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Metronome" />
-        <activity android:name=".ChordsTranspositions"></activity>
+        <activity android:name=".ChordsTranspositions" />
+        <activity android:name=".Chords"></activity>
     </application>
 
 </manifest>

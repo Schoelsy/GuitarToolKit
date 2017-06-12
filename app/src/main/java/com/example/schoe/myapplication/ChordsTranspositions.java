@@ -32,26 +32,26 @@ public class ChordsTranspositions extends AppCompatActivity {
 
         final List<String> chordsList = new ArrayList<String>(){{
             add("C");
-            add("Cis");
+            add("C#");
             add("D");
-            add("Dis");
+            add("D#");
             add("E");
             add("F");
-            add("Fis");
+            add("F#");
             add("G");
-            add("Gis");
+            add("G#");
             add("A");
             add("B");
             add("H");
             add("c");
-            add("cis");
+            add("c#");
             add("d");
-            add("dis");
+            add("d#");
             add("e");
             add("f");
-            add("fis");
+            add("f#");
             add("g");
-            add("gis");
+            add("g#");
             add("a");
             add("b");
             add("h");

@@ -51,4 +51,14 @@
         android:layout_below="@+id/tunerButton"
         android:layout_marginTop="85dp"
         android:text="Chords Transposition" />
+
+    <Button
+        android:id="@+id/Chords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chordsButton"
+        android:layout_alignStart="@+id/chordsButton"
+        android:layout_below="@+id/chordsButton"
+        android:layout_marginTop="25dp"
+        android:text="Chords" />
 </RelativeLayout>

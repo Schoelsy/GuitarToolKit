@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Button chords = (Button) findViewById(R.id.Chords);
+        chords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent chordsIntent = new Intent(v.getContext(), Chords.class);
+                startActivity(chordsIntent);
+            }
+        });
+
         final Button transposition = (Button) findViewById(R.id.chordsButton);
         transposition.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -5,5 +5,6 @@
     <string name="TranspositionsText">To transpose your chords, write in the field "original chords"
      the original chords, then how many tones you want to change it and then arrow up to transpose it higher or arrow down
     to transpose it lower. \n\n To transpose sharps(# / is) and all the variances of the chords (e.g C7/9) ignore the numbers and just add them
-    after transpositions to your new chords.\nNOTE: "Ais" is standing for "B", large letters stands for majors, little letters stays for minors. \n\n After each chord make a space to separate it.\n\nHave a nice play!</string>
+    after transpositions to your new chords.\nNOTE: "A#" is standing for "B", large letters stands for majors, little letters stays for minors. 
+        \n\n After each chord make a space to separate it.\n\nHave a nice play!</string>
 </resources>
