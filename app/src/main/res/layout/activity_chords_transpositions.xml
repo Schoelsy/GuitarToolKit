@@ -44,30 +44,30 @@
         android:id="@+id/helpButtonID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/helpbutton2"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/arrowDown"
         android:layout_alignStart="@+id/arrowDown"
         android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp" />
+        android:layout_marginStart="17dp"
+        android:src="@drawable/helpbutton2"/>
 
     <ImageButton
         android:id="@+id/arrowUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/arrowup"
         android:layout_below="@+id/chodsEditTextID"
         android:layout_toRightOf="@+id/transpositionNumber"
         android:layout_toEndOf="@+id/transpositionNumber"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="17dp"
+        android:src="@drawable/arrowup"/>
 
     <ImageButton
         android:id="@+id/arrowDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/arrowdown"
         android:layout_below="@+id/arrowUp"
         android:layout_toRightOf="@+id/transpositionNumber"
-        android:layout_toEndOf="@+id/transpositionNumber" />
+        android:layout_toEndOf="@+id/transpositionNumber"
+        android:src="@drawable/arrowdown"/>
 
 </RelativeLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+ <EditText
+     android:id="@+id/chordsSong"
+     android:layout_width="150dp"
+     android:layout_height="wrap_content"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentStart="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginLeft="16dp"
+     android:layout_marginStart="16dp"
+     android:layout_marginTop="37dp"
+     android:ems="10"
+     android:hint="Chords"
+     android:inputType="textPersonName" />
+
+ <EditText
+     android:id="@+id/rythmSong"
+     android:layout_width="150dp"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/chordsSong"
+     android:layout_alignStart="@+id/chordsSong"
+     android:layout_below="@+id/chordsSong"
+     android:ems="10"
+     android:hint="Rythm"
+     android:inputType="textPersonName" />
+
+ <EditText
+     android:id="@+id/tactsSong"
+     android:layout_width="150dp"
+     android:layout_height="wrap_content"
+     android:layout_alignLeft="@+id/rythmSong"
+     android:layout_alignStart="@+id/rythmSong"
+     android:layout_below="@+id/rythmSong"
+     android:ems="10"
+     android:hint="Tacts"
+     android:inputType="textPersonName" />
+
+
+    <WebView
+        android:id="@+id/webSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSong"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp" />
+
+    <ToggleButton
+        android:id="@+id/buttonSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tactsSong"
+        android:layout_alignStart="@+id/tactsSong"
+        android:layout_below="@+id/tactsSong"
+        android:layout_marginTop="25dp"
+        android:text="ToggleButton" />
+
+    <ImageView
+        android:id="@+id/palkaSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/podstawkaSong"
+        android:layout_alignLeft="@+id/podstawkaSong"
+        android:layout_alignStart="@+id/podstawkaSong"
+        android:layout_marginLeft="65dp"
+        android:layout_marginStart="65dp"
+        android:src="@drawable/metronomepalka" />
+
+    <ImageView
+        android:id="@+id/podstawkaSong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/webSong"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:src="@drawable/podstawka" />
+</RelativeLayout>

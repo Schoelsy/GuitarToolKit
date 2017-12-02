@@ -10,55 +10,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.schoe.myapplication.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="28dp"
-        android:text="Frequency: " />
-
     <Button
         android:id="@+id/tunerButton"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Tuner"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Tuner" />
 
     <Button
         android:id="@+id/metronomeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Metronome"
         android:layout_below="@+id/tunerButton"
-        android:layout_alignLeft="@+id/tunerButton"
-        android:layout_alignStart="@+id/tunerButton"
-        android:layout_marginTop="18dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Metronome" />
 
     <Button
         android:id="@+id/chordsButton"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tunerButton"
-        android:layout_alignStart="@+id/tunerButton"
-        android:layout_below="@+id/tunerButton"
-        android:layout_marginTop="85dp"
+        android:layout_alignLeft="@+id/Chords"
+        android:layout_alignStart="@+id/Chords"
+        android:layout_below="@+id/metronomeButton"
+        android:layout_marginTop="18dp"
         android:text="Chords Transposition" />
 
     <Button
         android:id="@+id/Chords"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/chordsButton"
-        android:layout_alignStart="@+id/chordsButton"
+        android:layout_alignLeft="@+id/playASongButton"
+        android:layout_alignStart="@+id/playASongButton"
         android:layout_below="@+id/chordsButton"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="18dp"
         android:text="Chords" />
+
+    <Button
+        android:id="@+id/playASongButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/metronomeButton"
+        android:layout_alignStart="@+id/metronomeButton"
+        android:layout_below="@+id/Chords"
+        android:layout_marginTop="18dp"
+        android:text="Practice a Song!" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playASongButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Exit" />
 </RelativeLayout>

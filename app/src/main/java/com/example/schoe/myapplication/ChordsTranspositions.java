@@ -1,8 +1,7 @@
 package com.example.schoe.myapplication;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +15,7 @@ import java.util.List;
 
 import static java.lang.StrictMath.abs;
 
-public class ChordsTranspositions extends AppCompatActivity {
+public class ChordsTranspositions extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class ChordsTranspositions extends AppCompatActivity {
         final ImageView arrowDown = (ImageView) findViewById(R.id.arrowDown);
         final ImageButton helpButton = (ImageButton) findViewById(R.id.helpButtonID);
 
-        final List<String> chordsList = new ArrayList<String>(){{
+        final List<String> chordsListDurrs = new ArrayList<String>(){{
             add("C");
             add("C#");
             add("D");
@@ -43,6 +42,9 @@ public class ChordsTranspositions extends AppCompatActivity {
             add("A");
             add("B");
             add("H");
+        }};
+
+        final List<String> chordsListMolls = new ArrayList<String>(){{
             add("c");
             add("c#");
             add("d");
@@ -56,6 +58,7 @@ public class ChordsTranspositions extends AppCompatActivity {
             add("b");
             add("h");
         }};
+
 
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +79,7 @@ public class ChordsTranspositions extends AppCompatActivity {
             public void onClick(View v) {
                 newChords.setText("");
                 String chords[] = originalChords.getText().toString().split(" ");
+                boolean durr = false;
                for (int i = 0; i < chords.length; i++) {
                  /*   for (int j = 0; j < chordsList.size(); j++){
                        if (chordsList.get(j) == chords[i]){
@@ -84,11 +88,20 @@ public class ChordsTranspositions extends AppCompatActivity {
                    }
 
                 }
-                    */
+                    */for(String s : chordsListDurrs){
+                        if (s.equals(chords[i])){
+                            durr = true;
+                        }
+                       }
 
-                   int index = chordsList.indexOf(chords[i]) + Integer.parseInt(numberOfTranspositions.getText().toString());
-                       newChords.append(chordsList.get(index%chordsList.size()) + " ");
-
+                       if(durr) {
+                           int index = chordsListDurrs.indexOf(chords[i]) + Integer.parseInt(numberOfTranspositions.getText().toString());
+                           newChords.append(chordsListDurrs.get(index % chordsListDurrs.size()) + " ");
+                       } else {
+                           int index = chordsListMolls.indexOf(chords[i]) + Integer.parseInt(numberOfTranspositions.getText().toString());
+                           newChords.append(chordsListMolls.get(index % chordsListMolls.size()) + " ");
+                       }
+                       durr = false;
                }
             }
         });
@@ -98,6 +111,7 @@ public class ChordsTranspositions extends AppCompatActivity {
             public void onClick(View v) {
                 newChords.setText("");
                 String chords[] = originalChords.getText().toString().split(" ");
+                boolean durr = false;
                 for (int i = 0; i < chords.length; i++) {
                  /*   for (int j = 0; j < chordsList.size(); j++){
                        if (chordsList.get(j) == chords[i]){
@@ -107,10 +121,20 @@ public class ChordsTranspositions extends AppCompatActivity {
 
                 }
                     */
+                    for(String s : chordsListDurrs){
+                        if (s.equals(chords[i])){
+                            durr = true;
+                        }
+                    }
 
-                    int index = ((((chordsList.indexOf(chords[i]) - Integer.parseInt(numberOfTranspositions.getText().toString())) % chordsList.size())+chordsList.size())%chordsList.size());
-                    newChords.append(chordsList.get(index%chordsList.size()) + " ");
-
+                    if (durr) {
+                        int index = ((((chordsListDurrs.indexOf(chords[i]) - Integer.parseInt(numberOfTranspositions.getText().toString())) % chordsListDurrs.size()) + chordsListDurrs.size()) % chordsListDurrs.size());
+                        newChords.append(chordsListDurrs.get(index % chordsListDurrs.size()) + " ");
+                    } else {
+                        int index = ((((chordsListMolls.indexOf(chords[i]) - Integer.parseInt(numberOfTranspositions.getText().toString())) % chordsListMolls.size()) + chordsListMolls.size()) % chordsListMolls.size());
+                        newChords.append(chordsListMolls.get(index % chordsListMolls.size()) + " ");
+                    }
+                    durr = false;
                 }
             }
         });

@@ -7,21 +7,17 @@ import android.content.pm.PackageManager;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import static android.media.AudioFormat.CHANNEL_IN_MONO;
 import static android.media.AudioFormat.CHANNEL_IN_STEREO;
 import static android.media.AudioFormat.ENCODING_PCM_16BIT;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     int blockSize = 256;
 
 
@@ -56,13 +52,33 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(metronomeIntent);
             }
         });
+
+        final Button song = (Button) findViewById(R.id.playASongButton);
+        song.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent playASong = new Intent(v.getContext(), Song.class);
+                startActivity(playASong);
+            }
+        });
+
+        final Button exit = (Button) findViewById(R.id.exitButton);
+        exit.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                finish();
+                System.exit(0);
+            }
+        });
+
         Button tuner = (Button) findViewById(R.id.tunerButton);
         tuner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean permitted = false;
 
-                if (ContextCompat.checkSelfPermission(v.getContext(),
+                /*if (ContextCompat.checkSelfPermission(v.getContext(),
                         Manifest.permission.RECORD_AUDIO)
                         != PackageManager.PERMISSION_GRANTED) {
 
@@ -81,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else permitted = true;
+                */
 
                 if (permitted) {
                     blockSize = AudioRecord.getMinBufferSize(44100, CHANNEL_IN_MONO, ENCODING_PCM_16BIT);

@@ -17,23 +17,23 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="49dp"
         android:rotation="-15"
-        app:srcCompat="@drawable/metronomepalka"
+        android:src="@drawable/metronomepalka"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="124dp" />
 
-        <EditText
-            android:id="@+id/bitsText"
-            android:layout_width="133dp"
-            android:layout_height="38dp"
-            android:layout_alignEnd="@+id/palka"
-            android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/palka"
-            android:layout_marginTop="100dp"
-            android:ems="10"
-            android:hint="@string/bits_minute"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="94dp"
-            tools:layout_editor_absoluteY="64dp" />
+    <EditText
+        android:id="@+id/bitsText"
+        android:layout_width="133dp"
+        android:layout_height="38dp"
+        android:layout_alignEnd="@+id/palka"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/palka"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="@string/bits_minute"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="64dp" />
 
     <ToggleButton
         android:id="@+id/bitsToggleButton"
@@ -55,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/palka"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/podstawka" />
+        android:src="@drawable/podstawka"
+        />
 
 </RelativeLayout>
