@@ -26,6 +26,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Button tuner = (Button) findViewById(R.id.tunerButton);
+        tuner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tunerIntent = new Intent(v.getContext(), Tuner.class);
+                startActivity(tunerIntent);
+            }
+        });
+
         final Button chords = (Button) findViewById(R.id.Chords);
         chords.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,12 +81,12 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button tuner = (Button) findViewById(R.id.tunerButton);
+       /* Button tuner = (Button) findViewById(R.id.tunerButton);
         tuner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean permitted = false;
-
+        */
                 /*if (ContextCompat.checkSelfPermission(v.getContext(),
                         Manifest.permission.RECORD_AUDIO)
                         != PackageManager.PERMISSION_GRANTED) {
@@ -98,7 +107,7 @@ public class MainActivity extends Activity {
 
                 } else permitted = true;
                 */
-
+        /*
                 if (permitted) {
                     blockSize = AudioRecord.getMinBufferSize(44100, CHANNEL_IN_MONO, ENCODING_PCM_16BIT);
                     final AudioRecord audioInput = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, 44100, CHANNEL_IN_MONO, ENCODING_PCM_16BIT, blockSize);
@@ -145,7 +154,7 @@ public class MainActivity extends Activity {
 
             }
 
-        });
+        });*/
     }
 
 

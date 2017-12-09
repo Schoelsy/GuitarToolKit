@@ -19,16 +19,16 @@
      android:hint="Chords"
      android:inputType="textPersonName" />
 
- <EditText
-     android:id="@+id/rythmSong"
-     android:layout_width="150dp"
-     android:layout_height="wrap_content"
-     android:layout_alignLeft="@+id/chordsSong"
-     android:layout_alignStart="@+id/chordsSong"
-     android:layout_below="@+id/chordsSong"
-     android:ems="10"
-     android:hint="Rythm"
-     android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/rythmSong"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chordsSong"
+        android:layout_alignStart="@+id/chordsSong"
+        android:layout_below="@+id/chordsSong"
+        android:ems="10"
+        android:hint="Rhythm"
+        android:inputType="textPersonName" />
 
  <EditText
      android:id="@+id/tactsSong"

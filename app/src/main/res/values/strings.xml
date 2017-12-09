@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Guitar Setup</string>
-    <string name="bits_minute">Bits/minute</string>
-    <string name="bitsToggleText">On/Off</string>
-    <string name="TranspositionsText">To transpose your chords, write in the field "original chords"
+    <string name="app_name" translatable="false">Guitar Setup</string>
+    <string name="bits_minute" translatable="false">Bits/minute</string>
+    <string name="bitsToggleText" translatable="false">On/Off</string>
+    <string name="TranspositionsText" translatable="false">To transpose your chords, write in the field "original chords"
      the original chords, then how many tones you want to change it and then arrow up to transpose it higher or arrow down
     to transpose it lower. \n\n To transpose sharps(# / is) and all the variances of the chords (e.g C7/9) ignore the numbers and just add them
     after transpositions to your new chords.\nNOTE: "A#" is standing for "B", large letters stands for majors, little letters stays for minors. 
