@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.schoe.myapplication.Metronome"
-    tools:layout_editor_absoluteY="0dp"
-    tools:layout_editor_absoluteX="8dp">
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="0dp">
 
 
     <ImageView
@@ -23,8 +23,8 @@
 
     <EditText
         android:id="@+id/bitsText"
-        android:layout_width="133dp"
-        android:layout_height="38dp"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
         android:layout_alignEnd="@+id/palka"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/palka"
@@ -39,15 +39,15 @@
         android:id="@+id/bitsToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bitsToggleText"
-        tools:layout_editor_absoluteY="64dp"
-        tools:layout_editor_absoluteX="227dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
         android:layout_alignBaseline="@+id/bitsText"
         android:layout_alignBottom="@+id/bitsText"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/bitsText"
         android:layout_toRightOf="@+id/bitsText"
-        android:layout_toEndOf="@+id/bitsText" />
+        android:text="@string/bitsToggleText"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="64dp" />
 
     <ImageView
         android:id="@+id/podstawka"
@@ -55,7 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/palka"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/podstawka"
-        />
+        android:src="@drawable/podstawka" />
 
 </RelativeLayout>

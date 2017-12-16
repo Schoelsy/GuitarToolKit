@@ -31,10 +31,10 @@ public class Chords extends Activity {
                 String url = "<script async type=\"text/javascript\" src=\"https://www.scales-chords.com/api/scales-chords-api.js\"></script>";
                 String query = "<ins class=\"scales_chords_api\" chord=" + chord + "></ins>";
                 String website = url.concat(query);
+                query = "<ins class=\"scales_chords_api\" chord=" + chord + " output=\"sound\"></ins>";
+                website = website.concat(query);
 
-                //web.loadUrl("http://www.gotyx.pl/");
                 web.loadDataWithBaseURL("https://www.scales-chords.com/api/", website, "text/html", "UTF-8","");
-                //web.reload();
             }
         });
    }

@@ -4,13 +4,18 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.media.AudioFormat;
+import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.Locale;
 
 import static android.media.AudioFormat.CHANNEL_IN_MONO;
 import static android.media.AudioFormat.CHANNEL_IN_STEREO;
@@ -25,6 +30,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Configuration conf = getResources().getConfiguration();
+        conf.setLocale(Locale.US);
+        getResources().updateConfiguration(conf, getResources().getDisplayMetrics());
+        this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
         final Button tuner = (Button) findViewById(R.id.tunerButton);
         tuner.setOnClickListener(new View.OnClickListener() {
@@ -80,81 +90,6 @@ public class MainActivity extends Activity {
                 System.exit(0);
             }
         });
-
-       /* Button tuner = (Button) findViewById(R.id.tunerButton);
-        tuner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean permitted = false;
-        */
-                /*if (ContextCompat.checkSelfPermission(v.getContext(),
-                        Manifest.permission.RECORD_AUDIO)
-                        != PackageManager.PERMISSION_GRANTED) {
-
-                    if (ActivityCompat.shouldShowRequestPermissionRationale((Activity)v.getContext(),
-                            Manifest.permission.RECORD_AUDIO)) {
-
-                        // Show an explanation to the user *asynchronously* -- don't block
-                        // this thread waiting for the user's response! After the user
-                        // sees the explanation, try again to request the permission.
-
-                    } else {
-                        ActivityCompat.requestPermissions((Activity)v.getContext(),
-                                new String[]{Manifest.permission.RECORD_AUDIO},
-                                8);
-                    }
-
-
-                } else permitted = true;
-                */
-        /*
-                if (permitted) {
-                    blockSize = AudioRecord.getMinBufferSize(44100, CHANNEL_IN_MONO, ENCODING_PCM_16BIT);
-                    final AudioRecord audioInput = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, 44100, CHANNEL_IN_MONO, ENCODING_PCM_16BIT, blockSize);
-                    audioInput.startRecording();
-
-
-                    final short[] buffer = new short[blockSize];
-
-                    while (true) {
-                        audioInput.read(buffer, 0, blockSize);
-                        Complex[] cinput = new Complex[buffer.length];
-
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
-                        for (int i = 0; i < buffer.length; i++)
-                            cinput[i] = new Complex((double) buffer[i] / 32768.0, 0.0);
-
-                        FastFourierTransform.fft(cinput);
-
-                        double[] magnitude = new double[blockSize / 2];
-
-                        for (int i = 0; i < (buffer.length / 2); i++) {
-                            magnitude[i] = Math.sqrt(cinput[i].re * cinput[i].re + cinput[i].im * cinput[i].im);
-                        }
-
-                        double max_magnitude = -999999999;
-                        int max_index = -1;
-                        for (int i = 0; i < blockSize / 2; i++) {
-                            if (magnitude[i] > max_magnitude) {
-                                max_magnitude = magnitude[i];
-                                max_index = i;
-                            }
-                        }
-
-                        double freq = (double) max_index * (audioInput.getSampleRate() / blockSize);
-                        Log.d("DZIALAJ: ", "Frequency = " + String.valueOf(freq));
-                    }
-
-                }
-
-            }
-
-        });*/
     }
 
 

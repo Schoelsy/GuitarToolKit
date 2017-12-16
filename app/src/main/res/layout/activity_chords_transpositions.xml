@@ -37,7 +37,6 @@
         android:layout_alignEnd="@+id/chodsEditTextID"
         android:layout_alignRight="@+id/chodsEditTextID"
         android:layout_alignTop="@+id/arrowUp"
-        android:textColor="@android:color/black"
         android:textSize="35sp" />
 
     <ImageButton
